@@ -1,32 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>Marcus' Page</title>
+    <a id="head"></a>
+    <title>Marcus' Website/Blog</title>
     <meta name="description" content="Marcus's resume/blog spot.">
     <link rel="stylesheet" href="/Code/style.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/imgs/thumbnail.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-
-    <header>
+    <header id="homepage" class="headerm">
+        <nav class="nav main-nav">
+            <a href="/Code/main.html" class="link">Resume</a>
+            <a href="/Code/main.html#resume" class="link">Projects</a>
+            <a href="/Code/main.html#feedback" class="link">Feedback</a>
+            <a href="meta.html" class="link">More About the Website</a>
+        </nav>
         <div class="center-flex">
-            <a><img src="/flower.png"></a>
-            <button class="button" onclick="window.location.href='/Code/main.html'" style="font-size: 3rem;">
-                Main Page
-            </button>
             <p></p>
+            <h1 class="intro" style="font-size: 6rem;">
+                Marcus' Website
+            </h1>
+            <p></p>
+            <a href=""> </a><img src="/imgs/flower.png" style="width: 40%">
+            <p></p>
+            <h3 class="intro" style="font-size: 2rem;">
+                Personal Website/Blog
+            </h3>
         </div>
     </header>
     <main>
-        <a id="resume">
-            <iframe src="/resume.pdf" width="100%" height="750px">
-                <!--height="500px"-->
-            </iframe>
-        </a>
+        <a id="projects"></a>
+        <h1>Projects</h2>
+            <div class="projects-container">
+
+                <div>
+                    <a href="https://github.com/MarcoPolo987/RephraserExt"><img src="/imgs/icon.png"></a>
+                    <h3>Rephraser</h3>
+                    <p>A Web extension that allows your to easily rewrite your sentences.</p>
+                    <ul>
+                        <li><a class="tag lang">js</a></li>
+                        <li><a class="tag lang">html/css</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="test"></p>
+                </div>
+                <div>
+                    <p class="test"></p>
+                </div>
+                <div>
+                    <p class="test"></p>
+                </div>
+            </div>
+            <iframe class="pdf-viewer" id="resume" src="/resume.pdf"></iframe>
+            <!-- <img src="w3html.gif" onload="loadImage()" width="100" height="132"> -->
+
+            <!-- <script>
+                function loadImage() {
+                    this.value = '';
+                }
+            </script> -->
+            <a id="feedback">
+                <div>
+                    <form class="center-flex" action="mailto:mostlymarco@gmail.com" method="POST">
+                        <label for="feedback">Please email feedback here</label>
+
+                        <textarea oninput="replace()" rows="10%" cols="60%" type="text" name="feedback"
+                            value="Type feedback here"></textarea>
+                        <script>
+                            function replace() {
+                                replace("%2B", '');
+                                replace("+", ' ');
+                            }
+
+                        </script>
+                        <input class=button value="Submit" type="submit">
+                    </form>
+                </div>
+            </a>
     </main>
+    <a href="#head"><img src="/imgs/up_butt.png" id="fixedbutton"></a>
+    <!-- <footer>
+        <a id="socials"></a>
+        <nav class="nav footer">
+            <div id="social-message">
+                footer notes
+    <h2>Socials:<a href="https://g.dev/Luceium"> </a></h2>
+    <h2>stay connected and reach out</h2>
+    </div>
+    <div class="socials-container">
+        <a target="_blank" href="https://github.com/Luceium">
+            <img class="link" src="/images/socialLogos/github.png">
+        </a>
+        <a target="_blank" href="https://leetcode.com/SlytherinMau/">
+            <img class="link" src="/images/socialLogos/leetcode.png">
+        </a>
+        <a target="_blank" href="https://linkedin.com/in/swemau">
+            <img class="link" src="/images/socialLogos/linkedin.png">
+        </a>
+    </div>
+    </nav>
+    </footer> -->
+    <form name="pForm" class="center-flex">
+        <label for="project">Stay Connected!</label>
+        <select name="project" id="project">
+            <option value="github">Github</option>
+            <option value="linkedin">LinkedIn</option>
+
+            <input class="button" onclick="goproj()" value="Submit">
+
+        </select>
+    </form>
+    <script src="/Code/script.js"></script>
 </body>
 
 </html>
