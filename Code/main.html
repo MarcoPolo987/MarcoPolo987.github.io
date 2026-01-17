@@ -2,37 +2,37 @@
 <html>
 
 <head>
-    <a id="head"></a>
-    <title>Marcus' Website/Blog</title>
-    <meta name="description" content="Marcus's resume/blog spot.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/imgs/thumbnail.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <a id="head"></a>
+  <title>Marcus' Website/Blog</title>
+  <meta name="description" content="Marcus's resume/blog spot.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="/imgs/thumbnail.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <header id="homepage" class="headerm">
-        <nav class="nav main-nav">
-            <a href="#resume" class="link">Resume</a>
-            <a href="#projects" class="link">Projects</a>
-            <a href="#feedback" class="link">Feedback</a>
-            <a href="meta.html" class="link">More About the Website</a>
-        </nav>
-        <div class="center-flex">
-            <p></p>
-            <h1 class="intro" style="font-size: 6rem;">
-                Marcus' Website
-            </h1>
-            <p></p>
-            <a href=""> </a><img src="/imgs/flower.png" style="width: 40%">
-            <p></p>
-            <h3 class="intro" style="font-size: 2rem;">
-                Personal Website/Blog
-            </h3>
-        </div>
-    </header>
-    <main>
-        <!-- <h2>Categories</h2>
+  <header id="homepage" class="headerm">
+    <nav class="nav main-nav">
+      <a href="#resume" class="link">Resume</a>
+      <a href="#projects" class="link">Projects</a>
+      <a href="#feedback" class="link">Feedback</a>
+      <a href="meta.html" class="link">More About the Website</a>
+    </nav>
+    <div class="center-flex">
+      <p></p>
+      <h1 class="intro" style="font-size: 6rem;">
+        Marcus' Website
+      </h1>
+      <p></p>
+      <a href=""> </a><img src="/imgs/flower.png" style="width: 40%">
+      <p></p>
+      <h3 class="intro" style="font-size: 2rem;">
+        Personal Website/Blog
+      </h3>
+    </div>
+  </header>
+  <main>
+    <!-- <h2>Categories</h2>
         <div class="row">
           <div class="carousel carousel-1">
             <button class="carousel-btn prev-btn"><i class="fa fa-chevron-left"></i></button>
@@ -96,60 +96,68 @@
       
         <script src="{{ url_for('static', filename='js/ajaxScript.js') }}"></script>
        -->
-        <a id="projects"></a>
-        <h1>Projects</h2>
-            <div class="projects-container">
+    <a id="projects"></a>
+    <h1>Projects</h2>
+      <div class="projects-container">
 
-                <div>
-                    <a href="https://github.com/MarcoPolo987/RephraserExt"><img src="/imgs/icon.png"></a>
-                    <a href="https://github.com/MarcoPolo987/RephraserExt">
-                        <h3>Rephraser</h3>
-                    </a>
-                    <p>A Web extension that allows your to easily rewrite your sentences.</p>
-                    <ul>
-                        <li><a class="tag lang">js</a></li>
-                        <li><a class="tag lang">html/css</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <p class="test"></p>
-                </div>
-                <div>
-                    <p class="test"></p>
-                </div>
-                <div>
-                    <p class="test"></p>
-                </div>
-            </div>
-            <iframe class="pdf-viewer" id="resume" src="/resume.pdf"></iframe>
-            <!-- <img src="w3html.gif" onload="loadImage()" width="100" height="132"> -->
+        <div>
+          <a href="https://github.com/MarcoPolo987/RephraserExt"><img src="/imgs/icon.png"></a>
+          <a href="https://github.com/MarcoPolo987/RephraserExt">
+            <h3>Rephraser</h3>
+          </a>
+          <p>A web extension that allows your to easily rewrite your sentences.</p>
+          <ul>
+            <li><a class="tag lang">js</a></li>
+            <li><a class="tag lang">html/css</a></li>
+          </ul>
+        </div>
+        <div>
+          <a href="mathgame.html"><img src="/imgs/icon.png"></a>
+          <a href="https://github.com/MarcoPolo987/RephraserExt">
+            <h3>Math Builder</h3>
+          </a>
+          <p>A fun and interactive website that teaches young kids basic arithmetic in a fun and engaging way.</p>
+          <ul>
+            <li><a class="tag lang">js</a></li>
+            <li><a class="tag lang">html/css</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="test"></p>
+        </div>
+        <div>
+          <p class="test"></p>
+        </div>
+      </div>
+      <iframe class="pdf-viewer" id="resume" src="/resume.pdf"></iframe>
+      <!-- <img src="w3html.gif" onload="loadImage()" width="100" height="132"> -->
 
-            <!-- <script>
+      <!-- <script>
                 function loadImage() {
                     this.value = '';
                 }
             </script> -->
-            <a id="feedback">
-                <div>
-                    <form class="center-flex" action="mailto:mostlymarco@gmail.com" method="POST">
-                        <label for="feedback">Please email feedback here</label>
+      <a id="feedback">
+        <div>
+          <form class="center-flex" action="mailto:mostlymarco@gmail.com" method="POST">
+            <label for="feedback">Please email feedback here</label>
 
-                        <textarea oninput="replace()" rows="10%" cols="60%" type="text" name="feedback"
-                            value="Type feedback here"></textarea>
-                        <script>
-                            function replace() {
-                                replace("%2B", '');
-                                replace("+", ' ');
-                            }
+            <textarea oninput="replace()" rows="10%" cols="60%" type="text" name="feedback"
+              value="Type feedback here"></textarea>
+            <script>
+              function replace() {
+                replace("%2B", '');
+                replace("+", ' ');
+              }
 
-                        </script>
-                        <input class=button value="Submit" type="submit">
-                    </form>
-                </div>
-            </a>
-    </main>
-    <a href="#head"><img src="/imgs/up_butt.png" id="fixedbutton"></a>
-    <!-- <footer>
+            </script>
+            <input class=button value="Submit" type="submit">
+          </form>
+        </div>
+      </a>
+  </main>
+  <a href="#head"><img src="/imgs/up_butt.png" id="fixedbutton"></a>
+  <!-- <footer>
         <a id="socials"></a>
         <nav class="nav footer">
             <div id="social-message">
@@ -170,17 +178,17 @@
     </div>
     </nav>
     </footer> -->
-    <form name="pForm" class="center-flex">
-        <label for="project">Stay Connected!</label>
-        <select name="project" id="project">
-            <option value="github">Github</option>
-            <option value="linkedin">LinkedIn</option>
+  <form name="pForm" class="center-flex">
+    <label for="project">Stay Connected!</label>
+    <select name="project" id="project">
+      <option value="github">Github</option>
+      <option value="linkedin">LinkedIn</option>
 
-            <input class="button" onclick="goproj()" value="Submit">
+      <input class="button" onclick="goproj()" value="Submit">
 
-        </select>
-    </form>
-    <script src="script.js"></script>
+    </select>
+  </form>
+  <script src="script.js"></script>
 </body>
 
 </html>
