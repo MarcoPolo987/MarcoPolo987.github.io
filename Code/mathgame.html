@@ -7,7 +7,7 @@
     <style>
         :root {
             --primary: #f4d03f;
-            /* Lego Yellow */
+
             --danger: #e74c3c;
             --success: #2ecc71;
             --dark: #2c3e50;
@@ -21,7 +21,6 @@
             padding: 20px;
         }
 
-        /* Layout */
         #game-container {
             max-width: 800px;
             margin: 0 auto;
@@ -35,7 +34,6 @@
             display: none !important;
         }
 
-        /* UI Elements */
         h1 {
             color: var(--dark);
         }
@@ -71,7 +69,6 @@
             color: white;
         }
 
-        /* Quiz Section */
         #quiz-area {
             font-size: 24px;
             padding: 20px;
@@ -90,7 +87,6 @@
             text-align: center;
         }
 
-        /* Shop Section */
         .bag {
             border: 2px dashed var(--dark);
             padding: 20px;
@@ -103,7 +99,6 @@
             background-color: #eee;
         }
 
-        /* Builder Section */
         #canvas-container {
             margin-top: 20px;
             overflow: auto;
@@ -255,9 +250,7 @@
             if (id === 'builder') drawGrid();
         }
 
-        /**
-         * 1. QUIZ LOGIC
-         */
+        //Quiz
         function generateQuestion() {
             const num1 = Math.floor(Math.random() * 12) + 1;
             const num2 = Math.floor(Math.random() * 12) + 1;
@@ -298,20 +291,15 @@
             }
         }
 
-        // Allow pressing "Enter" to submit
         document.getElementById('answer-input').addEventListener("keypress", function (event) {
             if (event.key === "Enter") checkAnswer();
         });
-
-        /**
-         * 2. SHOP LOGIC
-         */
+        //Shop
         function buyBag() {
             const price = 50;
             const msg = document.getElementById('shop-message');
 
             if (state.coins >= price) {
-                // Check if we have all colors
                 if (state.inventory.length >= state.allColors.length) {
                     msg.innerText = "You have unlocked every brick color!";
                     return;
@@ -319,7 +307,6 @@
 
                 state.coins -= price;
 
-                // Randomly find a color we DON'T have yet
                 let newColor;
                 do {
                     newColor = state.allColors[Math.floor(Math.random() * state.allColors.length)];
@@ -337,16 +324,12 @@
             }
         }
 
-        /**
-         * 3. BUILDER LOGIC
-         */
-        // Initialize Canvas Grid
+        //Build
         let gridData = []; // Stores placed blocks
 
         function drawGrid() {
             ctx.clearRect(0, 0, elements.canvas.width, elements.canvas.height);
 
-            // Draw grid lines
             ctx.strokeStyle = '#eee';
             for (let x = 0; x <= elements.canvas.width; x += GRID_SIZE) {
                 ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, elements.canvas.height); ctx.stroke();
@@ -355,12 +338,10 @@
                 ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(elements.canvas.width, y); ctx.stroke();
             }
 
-            // Draw Placed Blocks
             gridData.forEach(block => {
                 ctx.fillStyle = block.color;
                 ctx.fillRect(block.x, block.y, GRID_SIZE, GRID_SIZE);
 
-                // Add a little "Lego stud" effect
                 ctx.fillStyle = 'rgba(255,255,255,0.3)';
                 ctx.beginPath();
                 ctx.arc(block.x + GRID_SIZE / 2, block.y + GRID_SIZE / 2, GRID_SIZE / 4, 0, 2 * Math.PI);
@@ -380,7 +361,6 @@
                 } else {
                     btn.onclick = () => {
                         state.selectedColor = color;
-                        // Visual update for selection
                         document.querySelectorAll('.brick-btn').forEach(b => b.classList.remove('selected'));
                         btn.classList.add('selected');
                     };
@@ -390,23 +370,19 @@
             });
         }
 
-        // Handle Canvas Clicks
         elements.canvas.addEventListener('mousedown', (e) => {
             const rect = elements.canvas.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
-            // Snap to grid
             const gridX = Math.floor(x / GRID_SIZE) * GRID_SIZE;
             const gridY = Math.floor(y / GRID_SIZE) * GRID_SIZE;
 
             // Check if block exists there (simple toggle: click to add, click again to remove?)
-            // For now, let's just add (or overwrite)
 
-            // Remove existing if any
+
             gridData = gridData.filter(b => b.x !== gridX || b.y !== gridY);
 
-            // Add new block
             gridData.push({ x: gridX, y: gridY, color: state.selectedColor });
 
             drawGrid();
@@ -415,20 +391,9 @@
             const rect = elements.canvas.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-
-            // Snap to grid
             const gridX = Math.floor(x / GRID_SIZE) * GRID_SIZE;
             const gridY = Math.floor(y / GRID_SIZE) * GRID_SIZE;
-
-            // Check if block exists there (simple toggle: click to add, click again to remove?)
-            // For now, let's just add (or overwrite)
-
-            // Remove existing if any
             gridData = gridData.filter(b => b.x !== gridX || b.y !== gridY);
-
-            // Add new block
-            //gridData.push({ x: gridX, y: gridY, color: state.selectedColor });
-
             drawGrid();
         });
         function clearCanvas() {
@@ -438,9 +403,8 @@
             }
         }
 
-        // Initial Load
         updateUI();
-        showSection('quiz'); // Start at quiz
+        showSection('quiz'); 
     </script>
 
 </body>
